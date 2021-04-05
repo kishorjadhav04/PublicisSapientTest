@@ -8,53 +8,125 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Bare - Start Bootstrap Template</title>
+  <title>PublicisSapienttest</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
+<style>
+  .logo-img {
+    height: auto;
+    width: 100%;
+    background-color: lightgray;
+  }
+
+  #container {
+    font-weight: bold;
+  }
+
+  .successfull-Launch {
+
+    box-shadow: 10px 10px 10px 10px #f0f3f4
+  }
+
+  .false-btn {
+    float: right;
+  }
+
+  .btn {
+    background-color: #DAF7A6;
+    color: black;
+  }
+
+  .spaceX {
+    font-weight: bold;
+  }
+
+  /* Extra small devices (portrait phones, less than 576px) */
+  @media (max-width: 575.98px) {}
+
+  /*  Small devices (landscape phones, 576px and up) */
+  @media (min-width: 576px) and (max-width: 767.98px) {}
+
+  /* Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) and (max-width: 991.98px) {}
+
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) and (max-width: 1199.98px) {}
+
+  /* Extra large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {}
+</style>
 
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+  <nav class="navbar navbar-expand-lg navbar-white bg-light static-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Start Bootstrap</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-        </ul>
-      </div>
+      <h5 class="spaceX">SpaceX Launch Program</h5>
     </div>
   </nav>
 
   <!-- Page Content -->
   <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h1 class="mt-5">A Bootstrap 4 Starter Template</h1>
-        <p class="lead">Complete with pre-defined file paths and responsive navigation!</p>
-        <ul class="list-unstyled">
-          <li>Bootstrap 4.5.3</li>
-          <li>jQuery 3.5.1</li>
-        </ul>
+    <div class="row py-5">
+      <div class="col-sm-3 col-md-3 col-lg-3 py-5">
+        <h5>Filters</h5>
+        <div class="row py-5">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <p class="successfull-Launch text-center">Launch Year</p>
+          </div>
+          </br>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+            <button type="button" class="btn btn-success" onclick="">2006</button>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6 ">
+            <button type="button" class="btn btn-success" onclick="">2007</button>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6 py-4">
+            <button type="button" class="btn btn-success" onclick="">2008</button>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6 py-4">
+            <button type="button" class="btn btn-success" onclick="">2009</button>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+            <button type="button" class="btn btn-success" onclick="">2010</button>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+            <button type="button" class="btn btn-success" onclick="">2011</button>
+          </div>
+        </div>
+
+        <div class="row py-5">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <p class="successfull-Launch text-center">Successfull Launch</p>
+          </div>
+          </br>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+            <button type="button" class="btn btn-success" onclick="successFiltered('true')">True</button>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6 ">
+            <button type="button" class="btn btn-success false-btn" onclick="successFiltered('false')">False</button>
+          </div>
+        </div>
+
+        <div class="row py-5">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <p class="successfull-Launch text-center">Successfull Landing</p>
+          </div>
+          </br>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+            <button type="button" class="btn btn-success" onclick="successLanding('true')">True</button>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6 ">
+            <button type="button" class="btn btn-success false-btn" onclick="successLanding('false')">False</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-8 col-md-8 col-lg-8">
+        <div class="row" id="container">
+        </div>
       </div>
     </div>
   </div>
@@ -62,7 +134,88 @@
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.slim.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
 
+    var launchData;
+    const allLaunchDetails = fetch('https://api.spaceXdata.com/v3/launches?limit=100')
+      .then(response => response.json())
+      .then(data => {
+        data.forEach(res => {
+          fillContainer(res)
+        });
+
+      });
+
+    function successLanding(filterdata) {
+      let container = document.querySelector("#container");
+      container.innerHTML = "";
+      const allLaunchDetails = fetch('https://api.spaceXdata.com/v3/launches?limit=100&launch_success=' + launchData + '&land_success=' + filterdata)
+
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+          data.forEach(res => {
+            fillContainer(res)
+          });
+        });
+
+
+
+    }
+
+    function successFiltered(filterdata) {
+      launchData = filterdata;
+      let container = document.querySelector("#container");
+      container.innerHTML = "";
+      const allLaunchDetails = fetch('https://api.spaceXdata.com/v3/launches?limit=100&launch_success=true&land_success=' + filterdata)
+
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+          data.forEach(res => {
+            fillContainer(res)
+          });
+        });
+
+
+
+    }
+
+    function fillContainer(res) {
+      let card = document.createElement("div");
+      card.className = "col-sm-3 col-md-3 col-lg-3";
+
+      let logo_img = document.createElement("img");
+      logo_img.className = "logo-img";
+      logo_img.src = res.links.mission_patch;
+      card.appendChild(logo_img);
+
+      let MId = res.mission_id.toString();
+
+      let mission_name = document.createTextNode(res.mission_name + + '\n');
+      card.appendChild(mission_name);
+
+      let mid = document.createElement("div");
+      mid.className = "Mid";
+      let mission_id = document.createTextNode(+ +'Mission ID:' + MId + '\n');
+
+      card.appendChild(mission_id);
+
+      let launch_year = document.createTextNode('\n Launch Year:' + res.launch_year);
+      card.appendChild(launch_year);
+
+      let launch_success = document.createTextNode('launch successfull:' + res.launch_success);
+      card.appendChild(launch_success);
+
+      let container = document.querySelector("#container");
+      container.appendChild(card);
+
+
+    }
+
+
+  </script>
 </body>
+
 
 </html>
